@@ -15,6 +15,10 @@ public class Map {
         return emptyMap;
     }
 
+    public int getMapSize() {
+        return mapSize;
+    }
+
     private char[][] generateEmptyMap() {
         char[][] yAxis = new char[mapSize][mapSize];
         char[] xAxis = new char[mapSize];

@@ -10,7 +10,7 @@ public class MarsExplorerUi {
     private Random random = new Random();
     private Scanner scanner = new Scanner(System.in);
     private int mapSize = random.nextInt(15, 42);
-    private Map mapGen = new Map(42);
+    private Map mapGen = new Map(mapSize);
     public void run() {
 
         mapGen.getMap();

@@ -1,7 +1,6 @@
 package com.codecool.marsexploration;
 
-import com.codecool.marsexploration.data.MapConfig;
-import com.codecool.marsexploration.data.MapGen;
+import com.codecool.marsexploration.data.Map;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -10,18 +9,23 @@ public class Application {
     public static void main(String[] args) {
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
-        int mapSize = random.nextInt(42);
-        MapGen mapGen = new MapGen(42);
+        int mapSize = random.nextInt(15, 42);
+        Map mapGen = new Map(42);
 
-        System.out.println("The map is " + mapSize + "tiles big.");
+        mapGen.getMap();
+        System.out.println(mapGen.getTile(3, 1));
+        mapGen.setTile(3, 1, 'm');
+        System.out.println(mapGen.getTile(3, 1));
 
-        System.out.println("How many mountains");
-        int numberOfMountains = scanner.nextInt();
-        System.out.println("How many pits");
-        int numberOfPits = scanner.nextInt();
-        System.out.println("How big");
-        int sizeOfShapes = scanner.nextInt();
+        System.out.println("The map is " + mapSize + " tiles big.");
 
-        MapConfig mapConfig = new MapConfig("../resources", mapSize, numberOfMountains, numberOfPits, sizeOfShapes);
+        //System.out.println("How many mountains");
+        //int numberOfMountains = scanner.nextInt();
+        //System.out.println("How many pits");
+        //int numberOfPits = scanner.nextInt();
+        //System.out.println("How big");
+        //int sizeOfShapes = scanner.nextInt();
+
+        //MapConfig mapConfig = new MapConfig("../resources", mapSize, numberOfMountains, numberOfPits, sizeOfShapes);
     }
 }

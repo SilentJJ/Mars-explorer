@@ -14,7 +14,7 @@ public class MapFileWriter implements FileWriter{
 
     @Override
     public void writeMapToFile() {
-        String mapInOne = "";
+        String mapInOne = String.format("%s %s", map.getMapSize(), map.getMapSize()) + "\n";
         for (char[] line : map.getMap()) {
             mapInOne += String.join("", String.copyValueOf(line)) + "\n";
         }

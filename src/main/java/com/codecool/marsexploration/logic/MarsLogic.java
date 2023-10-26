@@ -42,6 +42,8 @@ public class MarsLogic {
         for(char[] mapX : map) {
             System.out.println(mapX);
         }
+        FileWriter fileWriter = new MapFileWriter(mapGen);
+
         fileWriter.writeMapToFile();
     }
 

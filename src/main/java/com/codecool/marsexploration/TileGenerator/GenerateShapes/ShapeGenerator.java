@@ -15,7 +15,7 @@ public abstract class ShapeGenerator extends TileGenerator {
     @Override
     public void generateTiles(Map map, int howManyTiles) {
         int mapSize = map.getMapSize();
-        int howManyStarterTile = 1;
+        int howManyStarterTile = Math.round(howManyTiles / 10);
         int starterTileCount = 0;
         while(starterTileCount <= howManyStarterTile) {
             int randomX = random.nextInt(mapSize - 1);

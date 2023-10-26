@@ -15,10 +15,8 @@ public abstract class ShapeGenerator extends TileGenerator {
     @Override
     public void generateTiles(Map map, int howManyTiles) {
         int mapSize = map.getMapSize();
-        int tileCount = 0;
         int howManyStarterTile = 1;
         int starterTileCount = 0;
-        Random random = new Random();
         while(starterTileCount <= howManyStarterTile) {
             int randomX = random.nextInt(mapSize - 1);
             int randomY = random.nextInt(mapSize - 1);
@@ -28,15 +26,7 @@ public abstract class ShapeGenerator extends TileGenerator {
                 ++starterTileCount;
             }
         }
-        while(tileCount <= howManyTiles) {
-            int randomX = random.nextInt(mapSize - 1);
-            int randomY = random.nextInt(mapSize - 1);
-            boolean placeable = validator.neighborIsValid(randomX, randomY, tileChar, tileChar, map);
-            if(placeable) {
-                map.setTile(randomX, randomY, tileChar);
-                ++tileCount;
-            }
-        }
+        placeTilesNextTo(tileChar, map, howManyTiles - howManyStarterTile);
     }
 
 }

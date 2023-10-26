@@ -34,9 +34,9 @@ public class MarsLogic {
         TileGenerator waterGen = new WaterGenerator(validator);
         mountainGen.generateTiles(mapGen, numberOfMountains);
         pitGen.generateTiles(mapGen, numberOfPits);
-        int numberOfMinerals = (int) Math.floor(numberOfMountains * 0.4);
+        int numberOfMinerals = (int) Math.floor(numberOfMountains * 0.35);
         mineralGen.generateTiles(mapGen, numberOfMinerals);
-        int numberOfWater = (int) Math.floor(numberOfPits * 0.4);
+        int numberOfWater = (int) Math.floor(numberOfPits * 0.35);
         waterGen.generateTiles(mapGen, numberOfWater);
         char[][] map = mapGen.getMap();
         for(char[] mapX : map) {

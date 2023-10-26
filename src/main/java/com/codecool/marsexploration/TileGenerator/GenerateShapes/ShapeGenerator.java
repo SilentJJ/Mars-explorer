@@ -24,7 +24,7 @@ public abstract class ShapeGenerator extends TileGenerator {
                 ++starterTileCount;
             }
         }
-        placeTilesNextTo(tileChar, map, howManyTiles - howManyStarterTile);
+        placeTilesNextToShapes(tileChar, map, howManyTiles - howManyStarterTile);
     }
 
 }

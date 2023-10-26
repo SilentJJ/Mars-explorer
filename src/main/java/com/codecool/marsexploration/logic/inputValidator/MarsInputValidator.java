@@ -5,19 +5,22 @@ public class MarsInputValidator implements InputValidator{
     private int availableTiles;
 
     @Override
-    public int[] availableTileCalculator(int mapSize) {
-        int[] minAndMax = new int[2];
-        this.availableTiles = (int) Math.floor((mapSize * mapSize) * 0.4);
-        minAndMax[0] = 10;
-        minAndMax[1] = availableTiles;
-        return minAndMax;
+    public int availableTileCalculator() {
+        return (int) Math.floor(availableTiles * 0.35);
+    }
+
+    @Override
+    public void usedTiles(int num) {
+        availableTiles -= num;
+    }
+
+    @Override
+    public void setAvaliableTiles(int num) {
+        availableTiles = num * num;
     }
 
     @Override
     public boolean isValid(int min, int max, int input) {
-        if(input > min && input < max) {
-            return true;
-        }
-        return false;
+        return input >= min && input <= max;
     }
 }

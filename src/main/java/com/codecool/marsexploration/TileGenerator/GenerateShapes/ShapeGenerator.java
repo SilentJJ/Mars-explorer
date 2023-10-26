@@ -2,7 +2,7 @@ package com.codecool.marsexploration.TileGenerator.GenerateShapes;
 
 import com.codecool.marsexploration.TileGenerator.TileGenerator;
 import com.codecool.marsexploration.TileGenerator.TileValidator;
-import com.codecool.marsexploration.data.Map;
+import com.codecool.marsexploration.logic.Map;
 
 public abstract class ShapeGenerator extends TileGenerator {
 

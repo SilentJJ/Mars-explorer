@@ -1,5 +1,8 @@
 package com.codecool.marsexploration.logic;
 
+import com.codecool.marsexploration.logic.fileWriter.FileWriter;
+import com.codecool.marsexploration.logic.fileWriter.MapFileWriter;
+
 public class MarsLogic {
 
     private String fileDirectory;
@@ -19,6 +22,11 @@ public class MarsLogic {
 
     public void runLogic() {
         mapGen.getMap();
+        System.out.println(mapGen.getTile(3, 1));
+        mapGen.setTile(3, 1, 'm');
+        System.out.println(mapGen.getTile(3, 1));
+        FileWriter fileWriter = new MapFileWriter(mapGen);
+        fileWriter.writeMapToFile();
     }
 
 }

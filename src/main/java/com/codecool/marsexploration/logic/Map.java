@@ -1,4 +1,4 @@
-package com.codecool.marsexploration.data;
+package com.codecool.marsexploration.logic;
 
 public class Map {
 
@@ -20,22 +20,20 @@ public class Map {
     }
 
     private char[][] generateEmptyMap() {
-        char[][] yAxis = new char[mapSize][mapSize];
-        char[] xAxis = new char[mapSize];
+        char[][] map = new char[mapSize][mapSize];
 
-        for (int j = 0; j < mapSize; j++) {
-            xAxis[j] = ('*');
-        }
         for (int i = 0; i < mapSize; i++) {
-            yAxis[i] = xAxis.clone();
+            for (int j = 0; j < mapSize; j++) {
+                map[i][j] = ('*');
+            }
         }
 
-        for (char[] uhg : yAxis) {
+        for (char[] uhg : map) {
             System.out.println("-");
             System.out.println(uhg);
         }
 
-        return yAxis;
+        return map;
     }
 
     public char getTile(int x, int y) {

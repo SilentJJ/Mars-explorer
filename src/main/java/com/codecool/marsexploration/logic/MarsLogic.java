@@ -16,14 +16,15 @@ public class MarsLogic {
     private int mapSize;
     private int numberOfMountains;
     private int numberOfPits;
-
     public Map mapGen;
+    private FileWriter fileWriter;
     public MarsLogic(String fileDirectory, int mapSize, int numberOfMountains, int numberOfPits) {
         this.fileDirectory = fileDirectory;
         this.mapSize = mapSize;
         this.numberOfMountains = numberOfMountains;
         this.numberOfPits = numberOfPits;
         this.mapGen = new Map(mapSize);
+        this.fileWriter = new MapFileWriter(mapGen);
     }
 
     public void runLogic() {
@@ -42,6 +43,7 @@ public class MarsLogic {
             System.out.println(mapX);
         }
         FileWriter fileWriter = new MapFileWriter(mapGen);
+
         fileWriter.writeMapToFile();
     }
 

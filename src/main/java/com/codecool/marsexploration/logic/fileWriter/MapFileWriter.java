@@ -21,7 +21,6 @@ public class MapFileWriter implements FileWriter{
 
         try {
             FileOutputStream outputStream = new FileOutputStream("src/main/resources/exploration-test.map");
-
             outputStream.write(mapInOne.getBytes());
             outputStream.close();
         } catch (IOException e) {

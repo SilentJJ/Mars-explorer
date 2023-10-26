@@ -27,11 +27,6 @@ public class Map {
             }
         }
 
-        for (char[] uhg : map) {
-            System.out.println("-");
-            System.out.println(uhg);
-        }
-
         return map;
     }
 
@@ -42,7 +37,5 @@ public class Map {
     public void setTile(int x, int y, char tileToSet) {
         doneMap[x][y] = tileToSet;
     }
-
-    //coordinate.setTile(x, y, 'm');
 
 }

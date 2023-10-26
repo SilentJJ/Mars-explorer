@@ -3,7 +3,7 @@ package com.codecool.marsexploration.logic;
 public class Map {
 
     private int mapSize;
-    public char[][] doneMap;
+    private char[][] doneMap;
 
     public Map(int mapSize) {
         this.mapSize = mapSize;

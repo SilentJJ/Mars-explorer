@@ -17,17 +17,6 @@ public abstract class ResourceGenerator extends TileGenerator {
 
     @Override
     public void generateTiles(Map map, int howManyTiles) {
-        int mapSize = map.getMapSize();
-        int tileCount = 0;
-        Random random = new Random();
-        while(tileCount <= howManyTiles) {
-            int randomX = random.nextInt(mapSize - 1);
-            int randomY = random.nextInt(mapSize - 1);
-            boolean placeable = validator.neighborIsValid(randomX, randomY, tileChar, placeNextTo, map);
-            if(placeable) {
-                map.setTile(randomX, randomY, tileChar);
-                ++tileCount;
-            }
-        }
+        placeTilesNextTo(placeNextTo, map, howManyTiles);
     }
 }

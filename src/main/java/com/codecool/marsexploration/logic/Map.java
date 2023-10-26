@@ -7,12 +7,11 @@ public class Map {
 
     public Map(int mapSize) {
         this.mapSize = mapSize;
-        this.doneMap = getMap();
+        this.doneMap = generateEmptyMap();
     }
 
     public char[][] getMap() {
-        char[][] emptyMap = generateEmptyMap();
-        return emptyMap;
+        return doneMap;
     }
 
     public int getMapSize() {
@@ -24,7 +23,7 @@ public class Map {
 
         for (int i = 0; i < mapSize; i++) {
             for (int j = 0; j < mapSize; j++) {
-                map[i][j] = ('*');
+                map[i][j] = (' ');
             }
         }
 

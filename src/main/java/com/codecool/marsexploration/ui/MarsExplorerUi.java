@@ -22,11 +22,9 @@ public class MarsExplorerUi {
         int sizeOfShapes = scanner.nextInt();
         System.out.println("The map is " + mapSize + " tiles big.");
 
-        MarsLogic marsLogic = new MarsLogic("../resources", mapSize, numberOfMountains, numberOfPits, sizeOfShapes);
+        MarsLogic marsLogic = new MarsLogic("../resources", mapSize, numberOfMountains, numberOfPits);
 
-        System.out.println(marsLogic.mapGen.getTile(3, 1));
-        marsLogic.mapGen.setTile(3, 1, 'm');
-        System.out.println(marsLogic.mapGen.getTile(3, 1));
+        marsLogic.runLogic();
 
     }
 

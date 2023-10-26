@@ -3,16 +3,15 @@ package com.codecool.marsexploration.logic;
 public class Map {
 
     private int mapSize;
-    public char[][] doneMap;
+    private char[][] doneMap;
 
     public Map(int mapSize) {
         this.mapSize = mapSize;
-        this.doneMap = getMap();
+        this.doneMap = generateEmptyMap();
     }
 
     public char[][] getMap() {
-        char[][] emptyMap = generateEmptyMap();
-        return emptyMap;
+        return doneMap;
     }
 
     public int getMapSize() {

@@ -24,9 +24,8 @@ public class MarsExplorerUi {
 
         MarsLogic marsLogic = new MarsLogic("../resources", mapSize, numberOfMountains, numberOfPits, sizeOfShapes);
 
-        System.out.println(marsLogic.mapGen.getTile(3, 1));
-        marsLogic.mapGen.setTile(3, 1, 'm');
-        System.out.println(marsLogic.mapGen.getTile(3, 1));
+
+        marsLogic.runLogic();
 
     }
 

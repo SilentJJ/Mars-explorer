@@ -6,6 +6,8 @@ import com.codecool.marsexploration.TileGenerator.GenerateShapes.MountainGenerat
 import com.codecool.marsexploration.TileGenerator.GenerateShapes.PitGenerator;
 import com.codecool.marsexploration.TileGenerator.TileGenerator;
 import com.codecool.marsexploration.TileGenerator.TileValidator;
+import com.codecool.marsexploration.logic.fileWriter.FileWriter;
+import com.codecool.marsexploration.logic.fileWriter.MapFileWriter;
 
 public class MarsLogic {
 
@@ -15,12 +17,14 @@ public class MarsLogic {
     private int numberOfMountains;
     private int numberOfPits;
     public Map mapGen;
+    private FileWriter fileWriter;
     public MarsLogic(String fileDirectory, int mapSize, int numberOfMountains, int numberOfPits) {
         this.fileDirectory = fileDirectory;
         this.mapSize = mapSize;
         this.numberOfMountains = numberOfMountains;
         this.numberOfPits = numberOfPits;
         this.mapGen = new Map(mapSize);
+        this.fileWriter = new MapFileWriter(mapGen);
     }
 
     public void runLogic() {
@@ -38,6 +42,7 @@ public class MarsLogic {
         for(char[] mapX : map) {
             System.out.println(mapX);
         }
+        fileWriter.writeMapToFile();
     }
 
 }

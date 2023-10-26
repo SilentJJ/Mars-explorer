@@ -14,7 +14,6 @@ public class MarsLogic {
     private int mapSize;
     private int numberOfMountains;
     private int numberOfPits;
-
     public Map mapGen;
     public MarsLogic(String fileDirectory, int mapSize, int numberOfMountains, int numberOfPits) {
         this.fileDirectory = fileDirectory;

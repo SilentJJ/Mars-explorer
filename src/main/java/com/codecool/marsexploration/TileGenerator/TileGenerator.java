@@ -8,7 +8,7 @@ public abstract class TileGenerator {
 
     protected final char tileChar;
     protected final TileValidator validator;
-    protected  final Random random = new Random();
+    protected final Random random = new Random();
 
     public TileGenerator(char tileChar, TileValidator validator) {
         this.tileChar = tileChar;

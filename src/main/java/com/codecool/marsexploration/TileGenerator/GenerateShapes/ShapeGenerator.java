@@ -4,8 +4,6 @@ import com.codecool.marsexploration.TileGenerator.TileGenerator;
 import com.codecool.marsexploration.TileGenerator.TileValidator;
 import com.codecool.marsexploration.logic.Map;
 
-import java.util.Random;
-
 public abstract class ShapeGenerator extends TileGenerator {
 
     public ShapeGenerator(char shapeChar, TileValidator validator) {

@@ -9,7 +9,7 @@ public class TileValidator {
     }
 
     public boolean neighborIsValid(int x, int y, char tile, char neighbor, Map map) {
-        if (tileIS(x, y, tile, map) && (tileIS(x + 1, y, neighbor, map) || tileIS(x - 1, y, neighbor, map) || tileIS(x, y + 1, neighbor, map) || tileIS(x, y - 1, neighbor, map))) {
+        if (isEmpty(x, y, map) && (tileIS(x + 1, y, neighbor, map) || tileIS(x - 1, y, neighbor, map) || tileIS(x, y + 1, neighbor, map) || tileIS(x, y - 1, neighbor, map))) {
             return true;
         } else {
             return false;
@@ -17,6 +17,10 @@ public class TileValidator {
     }
 
     public boolean tileIS(int x, int y, char tile, Map map) {
-        return map.getTile(x, y) == tile;
+        if (x >= 0 && x < map.getMapSize() && y >= 0 && y < map.getMapSize()) {
+            return map.getTile(x, y) == tile;
+        } else {
+            return false;
+        }
     }
 }

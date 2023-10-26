@@ -23,7 +23,7 @@ public class Map {
 
         for (int i = 0; i < mapSize; i++) {
             for (int j = 0; j < mapSize; j++) {
-                map[i][j] = ('*');
+                map[i][j] = (' ');
             }
         }
 

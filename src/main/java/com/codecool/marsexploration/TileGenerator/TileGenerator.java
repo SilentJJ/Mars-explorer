@@ -1,6 +1,6 @@
 package com.codecool.marsexploration.TileGenerator;
 
-import com.codecool.marsexploration.data.Map;
+import com.codecool.marsexploration.logic.Map;
 
 public abstract class TileGenerator {
 

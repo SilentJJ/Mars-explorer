@@ -6,8 +6,8 @@ public class MarsInputValidator implements InputValidator{
 
     @Override
     public int[] availableTileCalculator(int mapSize) {
-        int[] minAndMax = new int[1];
-        this.availableTiles = (int) ((mapSize * mapSize) * 0.4);
+        int[] minAndMax = new int[2];
+        this.availableTiles = (int) Math.floor((mapSize * mapSize) * 0.4);
         minAndMax[0] = 10;
         minAndMax[1] = availableTiles;
         return minAndMax;

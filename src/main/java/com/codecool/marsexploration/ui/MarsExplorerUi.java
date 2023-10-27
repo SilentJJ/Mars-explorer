@@ -1,21 +1,18 @@
 package com.codecool.marsexploration.ui;
 
-import com.codecool.marsexploration.logic.Map;
 import com.codecool.marsexploration.logic.MarsLogic;
 import com.codecool.marsexploration.logic.inputValidator.InputValidator;
 import com.codecool.marsexploration.logic.inputValidator.MarsInputValidator;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class MarsExplorerUi {
 
-    private Random random = new Random();
-    private Scanner scanner = new Scanner(System.in);
-    private int minimumMapSize = 10;
-    private int maximumMapSize = 35;
+    private final Scanner scanner = new Scanner(System.in);
+    private final int minimumMapSize = 10;
+    private final int maximumMapSize = 35;
     private final int min = 10;
-    private InputValidator inputValidator = new MarsInputValidator();
+    private final InputValidator inputValidator = new MarsInputValidator();
     public void run() {
 
         int mapSize = askMapSize();

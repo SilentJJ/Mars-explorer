@@ -15,6 +15,6 @@ public abstract class ResourceGenerator extends TileGenerator {
 
     @Override
     public void generateTiles(Map map, int howManyTiles) {
-        placeTilesNextToShapes(placeNextTo, map, howManyTiles);
+        placeTileNextToNeighbor(placeNextTo, map, howManyTiles);
     }
 }

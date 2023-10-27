@@ -8,12 +8,8 @@ public class TileValidator {
         return tileIS(x, y, ' ', map);
     }
 
-    public boolean neighborIsValid(int x, int y, char tile, char neighbor, Map map) {
-        if (isEmpty(x, y, map) && (tileIS(x + 1, y, neighbor, map) || tileIS(x - 1, y, neighbor, map) || tileIS(x, y + 1, neighbor, map) || tileIS(x, y - 1, neighbor, map))) {
-            return true;
-        } else {
-            return false;
-        }
+    public boolean neighborIsValid(int x, int y, char neighbor, Map map) {
+        return (isEmpty(x, y, map) && (tileIS(x + 1, y, neighbor, map) || tileIS(x - 1, y, neighbor, map) || tileIS(x, y + 1, neighbor, map) || tileIS(x, y - 1, neighbor, map)));
     }
 
     public boolean tileIS(int x, int y, char tile, Map map) {

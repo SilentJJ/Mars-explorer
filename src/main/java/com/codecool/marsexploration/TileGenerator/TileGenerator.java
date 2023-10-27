@@ -8,7 +8,7 @@ public abstract class TileGenerator {
 
     protected final char tileChar;
     protected final TileValidator validator;
-    protected final Random random = new Random();
+    protected static final Random random = new Random();
 
     public TileGenerator(char tileChar, TileValidator validator) {
         this.tileChar = tileChar;
@@ -17,16 +17,16 @@ public abstract class TileGenerator {
 
     public abstract void generateTiles(Map map, int howManyTiles);
 
-    public void placeTilesNextTo(char placeNextTo, Map map, int howManyTiles) {
-        int mapSize = map.getMapSize();
+    public void placeTileNextToNeighbor(char neighborTileChar, Map map, int numberOfNeededTiles) {
+        int maxIndex = map.getMapSize() - 1;
         int tileCount = 0;
-        while(tileCount < howManyTiles) {
-            int randomX = random.nextInt(mapSize - 1);
-            int randomY = random.nextInt(mapSize - 1);
-            boolean placeable = validator.neighborIsValid(randomX, randomY, tileChar, placeNextTo, map);
+        while(tileCount < numberOfNeededTiles) {
+            int randomX = random.nextInt(maxIndex);
+            int randomY = random.nextInt(maxIndex);
+            boolean placeable = validator.neighborIsValid(randomX, randomY, neighborTileChar, map);
             if(placeable) {
                 map.setTile(randomX, randomY, tileChar);
-                ++tileCount;
+                tileCount++;
             }
         }
     }

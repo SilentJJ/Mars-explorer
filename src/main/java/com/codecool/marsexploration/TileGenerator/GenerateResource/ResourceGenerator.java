@@ -4,8 +4,6 @@ import com.codecool.marsexploration.TileGenerator.TileGenerator;
 import com.codecool.marsexploration.TileGenerator.TileValidator;
 import com.codecool.marsexploration.logic.Map;
 
-import java.util.Random;
-
 public abstract class ResourceGenerator extends TileGenerator {
 
     private final char placeNextTo;
@@ -17,6 +15,6 @@ public abstract class ResourceGenerator extends TileGenerator {
 
     @Override
     public void generateTiles(Map map, int howManyTiles) {
-        placeTilesNextTo(placeNextTo, map, howManyTiles);
+        placeTileNextToNeighbor(placeNextTo, map, howManyTiles);
     }
 }
